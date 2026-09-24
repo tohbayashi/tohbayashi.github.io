@@ -1,1 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Takumi S. Ohbayashi | Researcher</title>
+
+    <meta
+        name="description"
+        content="Personal website of Takumi S. Ohbayashi, graduate student and researcher at Kyoto University."
+    >
+
+    <style>
+
+        /* =========================
+           BASIC SETTINGS
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Helvetica Neue",
+                Arial,
+                sans-serif;
+
+            background: #ffffff;
+            color: #171717;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid #eeeeee;
+
+            z-index: 1000;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: auto;
+
+            height: 72px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 30px;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+
+            font-size: 14px;
+            color: #555;
+        }
+
+        .nav-links a {
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #000;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            max-width: 1200px;
+            margin: auto;
+
+            padding: 140px 30px 100px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-label {
+            font-size: 14px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+
+            color: #777;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 96px);
+            line-height: 1.02;
+
+            letter-spacing: -0.04em;
+
+            margin-bottom: 30px;
+        }
+
+        .hero-description {
+            font-size: 21px;
+            color: #555;
+
+            max-width: 720px;
+
+            margin-bottom: 40px;
+        }
+
+        .hero-meta {
+            font-size: 15px;
+            color: #777;
+        }
+
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
+
+        section {
+            max-width: 1200px;
+            margin: auto;
+
+            padding: 110px 30px;
+        }
+
+        .section-header {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+
+            gap: 50px;
+
+            margin-bottom: 70px;
+        }
+
+        .section-number {
+            font-size: 14px;
+            color: #999;
+
+            letter-spacing: 0.1em;
+        }
+
+        .section-title {
+            font-size: 42px;
+            line-height: 1.2;
+
+            letter-spacing: -0.02em;
+        }
+
+        .section-content {
+            max-width: 800px;
+            margin-left: 270px;
+        }
+
+        .section-content p {
+            font-size: 18px;
+            color: #555;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           RESEARCH
+        ========================= */
+
+        .research-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .research-card {
+            border-top: 1px solid #222;
+
+            padding: 30px 0;
+        }
+
+        .research-card h3 {
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        .research-card p {
+            color: #666;
+        }
+
+
+        /* =========================
+           LISTS
+        ========================= */
+
+        .publication,
+        .presentation,
+        .news-item {
+            border-top: 1px solid #e5e5e5;
+
+            padding: 25px 0;
+
+            display: grid;
+            grid-template-columns: 120px 1fr;
+
+            gap: 30px;
+        }
+
+        .publication:last-child,
+        .presentation:last-child,
+        .news-item:last-child {
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .year {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .item-title {
+            font-size: 17px;
+            font-weight: 600;
+
+            margin-bottom: 6px;
+        }
+
+        .item-description {
+            color: #666;
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-box {
+            background: #f5f5f5;
+
+            padding: 50px;
+
+            margin-top: 30px;
+        }
+
+        .contact-box p {
+            margin-bottom: 12px;
+        }
+
+        .contact-link {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top: 1px solid #eeeeee;
+
+            padding: 40px 30px;
+
+            color: #888;
+
+            font-size: 13px;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .nav {
+                height: 64px;
+                padding: 0 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding:
+                    120px 20px
+                    80px;
+            }
+
+            .hero h1 {
+                font-size: 52px;
+            }
+
+            .hero-description {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 80px 20px;
+            }
+
+            .section-header {
+                display: block;
+                margin-bottom: 40px;
+            }
+
+            .section-number {
+                margin-bottom: 12px;
+            }
+
+            .section-title {
+                font-size: 34px;
+            }
+
+            .section-content {
+                margin-left: 0;
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .publication,
+            .presentation,
+            .news-item {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+
+            .contact-box {
+                padding: 30px;
+            }
+
+            .footer-inner {
+                display: block;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <nav class="nav">
+
+        <a href="#top" class="logo">
+            TOHBAYASHI
+        </a>
+
+        <div class="nav-links">
+
+            <a href="#about">About</a>
+
+            <a href="#research">Research</a>
+
+            <a href="#publications">Publications</a>
+
+            <a href="#presentations">Presentations</a>
+
+            <a href="#news">News</a>
+
+            <a href="#contact">Contact</a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<main id="top">
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            Researcher / Graduate Student
+        </div>
+
+        <h1>
+            Takumi S.<br>
+            Ohbayashi
+        </h1>
+
+        <p class="hero-description">
+            Investigating how sensory information is integrated
+            in the nervous system and how neural activity drives
+            behavior.
+        </p>
+
+        <p class="hero-meta">
+            Graduate School of Biostudies, Kyoto University
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <div class="section-header">
+
+        <div class="section-number">
+            01 / ABOUT
+        </div>
+
+        <h2 class="section-title">
+            About
+        </h2>
+
+    </div>
+
+
+    <div class="section-content">
+
+        <p>
+            I am a graduate student at Kyoto University
+            studying neural mechanisms underlying sensory
+            processing and behavior.
+        </p>
+
+        <p>
+            My research focuses on how sensory information is
+            integrated within neural circuits and how changes
+            in intracellular signaling contribute to behavior.
+        </p>
+
+        <p>
+            I mainly use
+            <em>Drosophila melanogaster</em>
+            as a model organism.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     RESEARCH
+========================= -->
+
+<section id="research">
+
+    <div class="section-header">
+
+        <div class="section-number">
+            02 / RESEARCH
+        </div>
+
+        <h2 class="section-title">
+            Research
+        </h2>
+
+    </div>
+
+
+    <div class="research-grid">
+
+
+        <div class="research-card">
+
+            <h3>
+                Sensory Integration
+            </h3>
+
+            <p>
+                How different sensory modalities are integrated
+                within the nervous system to generate appropriate
+                behavioral responses.
+            </p>
+
+        </div>
+
+
+
+        <div class="research-card">
+
+            <h3>
+                Calcium Dynamics
+            </h3>
+
+            <p>
+                Investigating intracellular calcium dynamics
+                and their relationship to neural activity.
+            </p>
+
+        </div>
+
+
+
+        <div class="research-card">
+
+            <h3>
+                Neural Circuits
+            </h3>
+
+            <p>
+                Understanding the neural circuits that connect
+                sensory information to behavioral outputs.
+            </p>
+
+        </div>
+
+
+
+        <div class="research-card">
+
+            <h3>
+                Drosophila
+            </h3>
+
+            <p>
+                Using Drosophila larvae to investigate cellular
+                and circuit-level mechanisms of sensory processing.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PUBLICATIONS
+========================= -->
+
+<section id="publications">
+
+    <div class="section-header">
+
+        <div class="section-number">
+            03 / PUBLICATIONS
+        </div>
+
+        <h2 class="section-title">
+            Publications
+        </h2>
+
+    </div>
+
+
+    <div class="section-content">
+
+
+        <div class="publication">
+
+            <div class="year">
+                2026
+            </div>
+
+            <div>
+
+                <div class="item-title">
+                    Publication title goes here
+                </div>
+
+                <div class="item-description">
+                    Authors · Journal
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="publication">
+
+            <div class="year">
+                2025
+            </div>
+
+            <div>
+
+                <div class="item-title">
+                    Another publication
+                </div>
+
+                <div class="item-description">
+                    Authors · Journal
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PRESENTATIONS
+========================= -->
+
+<section id="presentations">
+
+    <div class="section-header">
+
+        <div class="section-number">
+            04 / PRESENTATIONS
+        </div>
+
+        <h2 class="section-title">
+            Presentations
+        </h2>
+
+    </div>
+
+
+    <div class="section-content">
+
+
+        <div class="presentation">
+
+            <div class="year">
+                2026
+            </div>
+
+            <div>
+
+                <div class="item-title">
+                    Neural integration of nociception
+                    and osmolarity via Piezo-mediated
+                    calcium oscillation
+                </div>
+
+                <div class="item-description">
+                    Biostudies Student Symposium
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     NEWS
+========================= -->
+
+<section id="news">
+
+    <div class="section-header">
+
+        <div class="section-number">
+            05 / NEWS
+        </div>
+
+        <h2 class="section-title">
+            News
+        </h2>
+
+    </div>
+
+
+    <div class="section-content">
+
+
+        <div class="news-item">
+
+            <div class="year">
+                2026.09
+            </div>
+
+            <div>
+
+                <div class="item-title">
+                    Personal website launched
+                </div>
+
+                <div class="item-description">
+                    This website is now available through GitHub Pages.
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <div class="section-header">
+
+        <div class="section-number">
+            06 / CONTACT
+        </div>
+
+        <h2 class="section-title">
+            Contact
+        </h2>
+
+    </div>
+
+
+    <div class="section-content">
+
+        <div class="contact-box">
+
+            <p>
+                <strong>Takumi S. Ohbayashi</strong>
+            </p>
+
+            <p>
+                Graduate School of Biostudies<br>
+                Kyoto University
+            </p>
+
+            <p>
+                Email:
+                <a
+                    href="mailto:your-email@example.com"
+                    class="contact-link"
+                >
+                    your-email@example.com
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div>
+            © 2026 Takumi S. Ohbayashi
+        </div>
+
+        <div>
+            tohbayashi.github.io
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>
