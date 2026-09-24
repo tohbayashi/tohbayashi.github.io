@@ -12,6 +12,98 @@
         content="Personal website of Takumi S. Ohbayashi, graduate student and researcher at Kyoto University."
     >
 
+    /* =========================
+   FLOATING LOGOS
+========================= */
+
+.logo-triangle {
+    position: relative;
+
+    width: 240px;
+    height: 220px;
+
+    flex-shrink: 0;
+}
+
+
+.floating-logo {
+    position: absolute;
+
+    width: 85px;
+    height: 85px;
+
+    display: block;
+
+    animation: floating 3.5s ease-in-out infinite;
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+}
+
+
+.floating-logo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* 上：Lab */
+
+.logo-lab {
+    top: 0;
+    left: 78px;
+}
+
+
+/* 左下：KU */
+
+.logo-ku {
+    bottom: 0;
+    left: 0;
+
+    animation-delay: 0.5s;
+}
+
+
+/* 右下：Bio */
+
+.logo-bio {
+    bottom: 0;
+    right: 0;
+
+    animation-delay: 1s;
+}
+
+
+/* マウスを乗せたとき */
+
+.floating-logo:hover {
+    transform: scale(1.12);
+
+    filter:
+        drop-shadow(
+            0 8px 12px rgba(0, 0, 0, 0.15)
+        );
+}
+
+
+/* ぷかぷか */
+
+@keyframes floating {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+
     <style>
 
         /* =========================
@@ -462,43 +554,47 @@
 
     </div>
 
-    <div class="hero">
 
-    <div class="hero-text">
-        <h1>Takumi S. Ohbayashi</h1>
-        <p>Researcher</p>
-        <p>Kyoto University</p>
-    </div>
+   <!-- =========================
+         LOGOS
+    ========================= -->
 
     <div class="logo-triangle">
 
         <!-- 上：Lab -->
-        <a href="https://www.cellpattern.lif.kyoto-u.ac.jp"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="logo logo-lab">
+        <a
+            href="https://www.cellpattern.lif.kyoto-u.ac.jp"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="floating-logo logo-lab"
+        >
             <img src="images/lab.png" alt="Laboratory">
         </a>
 
+
         <!-- 左下：KU -->
-        <a href="https://www.kyoto-u.ac.jp/ja"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="logo logo-ku">
+        <a
+            href="https://www.kyoto-u.ac.jp/ja"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="floating-logo logo-ku"
+        >
             <img src="images/ku.png" alt="Kyoto University">
         </a>
 
+
         <!-- 右下：Bio -->
-        <a href="https://www.lif.kyoto-u.ac.jp/j/"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="logo logo-bio">
-            <img src="images/bio.png" alt="Graduate School">
+        <a
+            href="https://www.lif.kyoto-u.ac.jp/j/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="floating-logo logo-bio"
+        >
+            <img src="images/bio.png" alt="Graduate School of Biostudies">
         </a>
 
     </div>
 
-</div>
 </section>
 
 
