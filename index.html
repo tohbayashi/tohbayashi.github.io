@@ -330,6 +330,17 @@
             color: #666;
         }
 
+                
+        /* Researchの画像 */
+        .research-image {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            margin-top: 25px;
+            border-radius: 4px;
+        }
+
+
 
         /* =========================
            LISTS
@@ -683,22 +694,61 @@
     </div>
 
 
+    
     <div class="research-grid">
-
-
+    
+        <!-- 上段左：Sensory Integration -->
         <div class="research-card">
-
-            <h3>
-                Sensory Integration
-            </h3>
-
+            <h3>Sensory Integration</h3>
             <p>
                 How different sensory modalities are integrated
                 within the nervous system to generate appropriate
                 behavioral responses.
             </p>
-
         </div>
+    
+        <!-- 上段右：Neural Circuits -->
+        <div class="research-card">
+            <h3>Neural Circuits</h3>
+            <p>
+                Understanding the neural circuits that connect
+                sensory information to behavioral outputs.
+            </p>
+        </div>
+    
+        <!-- 下段左：Calcium Dynamics -->
+        <div class="research-card">
+            <h3>Calcium Dynamics</h3>
+            <p>
+                Investigating intracellular calcium dynamics
+                and their relationship to neural activity.
+            </p>
+    
+            <img
+                src="images/calcium_dynamics.jpg"
+                alt="Calcium imaging"
+                class="research-image"
+            >
+        </div>
+    
+        <!-- 下段右：Protein–Protein Interaction -->
+        <div class="research-card">
+            <h3>Protein–Protein Interaction</h3>
+            <p>
+                Investigation of ligand–GPCR interactions in the
+                osmosensory pathway using Co-immunoprecipitation
+                (Co-IP) and Blue Native Polyacrylamide Gel
+                Electrophoresis (BN-PAGE).
+            </p>
+    
+            <img
+                src="images/protein_interaction.jpg"
+                alt="Protein interaction analysis"
+                class="research-image"
+            >
+        </div>
+    
+    </div>
 
 
 
