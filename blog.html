@@ -20,8 +20,11 @@
             font-family: Arial, sans-serif;
             color: #171717;
             line-height: 1.8;
+        
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
-
         header {
             background: #003366;
             color: #ffffff;
@@ -31,11 +34,13 @@
         .nav {
             max-width: 1200px;
             margin: auto;
+        
+            height: 72px;
+            padding: 0 30px;
+        
             display: flex;
             align-items: center;
             justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
         }
 
         .nav-links {
@@ -44,9 +49,10 @@
             gap: 25px;
         }
 
-        header a {
+        header {
+            background: #003366;
             color: #ffffff;
-            text-decoration: none;
+            width: 100%;
         }
 
         .logo {
@@ -56,9 +62,11 @@
 
         main {
             max-width: 1000px;
+            width: 100%;
             margin: auto;
             padding: 80px 30px;
-            min-height: 80vh;
+        
+            flex: 1;
         }
 
         h1 {
