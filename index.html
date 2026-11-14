@@ -568,6 +568,135 @@
             scrollbar-width: thin;
             scrollbar-color: #003366 #f5f5f5;
         }
+        
+        
+        
+                
+        /* =========================
+           HAMBURGER MENU
+        ========================= */
+        
+        /* PCでは非表示 */
+        .menu-toggle {
+            display: none;
+            position: relative;
+            width: 40px;
+            height: 40px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        /* 三本線 */
+        .menu-toggle span {
+            position: absolute;
+            left: 5px;
+            width: 30px;
+            height: 2px;
+            background: #ffffff;
+            border-radius: 2px;
+        
+            transition:
+                transform 0.4s ease,
+                opacity 0.4s ease;
+        
+            transform-origin: center;
+        }
+        
+        /* 上の線 */
+        .menu-toggle span:nth-child(1) {
+            top: 11px;
+        }
+        
+        /* 中央の線 */
+        .menu-toggle span:nth-child(2) {
+            top: 19px;
+        }
+        
+        /* 下の線 */
+        .menu-toggle span:nth-child(3) {
+            top: 27px;
+        }
+        
+        /* 上の線：中央へ移動＋45度回転 */
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        
+        /* 中央の線：フェードアウト */
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        /* 下の線：中央へ移動＋逆方向に45度回転 */
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        
+        
+        /* =========================
+           MOBILE MENU
+        ========================= */
+        
+        @media (max-width: 800px) {
+        
+            .nav {
+                position: relative;
+                height: 64px;
+                padding: 0 20px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: center;
+                justify-content: space-between;
+            }
+        
+            .menu-toggle {
+                display: block;
+                flex-shrink: 0;
+            }
+        
+            .nav-links {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                align-items: stretch;
+        
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+        
+                background: #003366;
+                gap: 0;
+        
+                max-height: 0;
+                opacity: 0;
+                visibility: hidden;
+                overflow: hidden;
+        
+                transition:
+                    max-height 0.4s ease,
+                    opacity 0.4s ease,
+                    visibility 0.4s;
+            }
+        
+            .nav-links.active {
+                max-height: calc(100dvh - 64px);
+                opacity: 1;
+                visibility: visible;
+                overflow-y: auto;
+            }
+        
+            .nav-links a {
+                display: block;
+                padding: 16px 25px;
+                color: #ffffff;
+                font-size: 16px;
+                border-top: 1px solid rgba(255,255,255,0.15);
+            }
+        }
+
 
 
     </style>
@@ -592,6 +721,17 @@
             Takumi S. Ohbayashi
         </a>
 
+        <button class="menu-toggle"
+                id="menu-toggle"
+                aria-label="メニューを開く"
+                aria-expanded="false"
+                aria-controls="nav-links">
+        
+            <span></span>
+            <span></span>
+            <span></span>
+        
+        </button>
         
         <div class="nav-links">
         
@@ -1100,6 +1240,43 @@ Tadashi Uemura · Genes to Cells
 </footer>
 
 
+<script><!-- スマホ用の右上アニメーションのため追加 -->
+
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    function closeMenu() {
+        menuToggle.classList.remove("active");
+        navLinks.classList.remove("active");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "メニューを開く");
+    }
+
+    menuToggle.addEventListener("click", function () {
+
+        const isOpen = menuToggle.classList.toggle("active");
+
+        navLinks.classList.toggle("active", isOpen);
+
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "メニューを閉じる" : "メニューを開く"
+        );
+
+    });
+
+    navLinks.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", closeMenu);
+    });
+
+</script>
+
+
+
+    
 </body>
 
 </html>
