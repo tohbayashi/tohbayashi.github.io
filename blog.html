@@ -25,11 +25,6 @@
             line-height: 1.7;
         }
 
-        footer {
-            background: #003366;
-            color: #fff;
-        }
-
         @media (max-width: 800px) {
             body {
                 padding-top: 64px;
@@ -64,7 +59,8 @@
             text-decoration: none;
         }
 
-        .blog-card:hover, .blog-card:focus-visible {
+        .blog-card:hover,
+        .blog-card:focus-visible {
             box-shadow: 0 4px 16px #00336629;
         }
 
@@ -82,12 +78,6 @@
             padding: 16px 20px;
             font-size: 20px;
             line-height: 1.5;
-        }
-
-        .photo-credit {
-            margin: 8px 0 0;
-            color: #555;
-            font-size: 12px;
         }
 
         .announcement {
@@ -111,6 +101,8 @@
         }
 
         footer {
+            background: #003366;
+            color: #fff;
             padding: 24px;
             text-align: center;
             font-size: 13px;
@@ -123,9 +115,7 @@
 <body>
     <header>
         <nav class="nav" aria-label="メインナビゲーション">
-            <a href="index.html" class="logo">
-                Takumi S. Ohbayashi
-            </a>
+            <a href="index.html" class="logo">Takumi S. Ohbayashi</a>
 
             <button class="menu-toggle"
                     id="menu-toggle"
@@ -156,20 +146,9 @@
         <div class="blog-grid">
             <article>
                 <a class="blog-card" href="blog/sauerkraut.html">
-                    <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/5/56/Sauerkraut_Jar.jpg"
-                        alt=""
-                        width="1860"
-                        height="2841"
-                    >
+                    <img src="images/IMG_8540.heic" alt="">
                     <h2>研究室でザワークラウトを作製中</h2>
                 </a>
-
-                <p class="photo-credit">
-                    参考写真：
-                    <a href="https://commons.wikimedia.org/wiki/File:Sauerkraut_Jar.jpg">Bdubay / Wikimedia Commons</a>
-                    （<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>、表示範囲をトリミング）
-                </p>
             </article>
 
             <!-- 次の記事のカードはこの位置に追加 -->
