@@ -25,11 +25,6 @@
             line-height: 1.7;
         }
 
-        footer {
-            background: #003366;
-            color: #fff;
-        }
-
         @media (max-width: 800px) {
             body {
                 padding-top: 64px;
@@ -53,7 +48,26 @@
             line-height: 1.35;
         }
 
+        .post-photo {
+            margin: 0 0 24px;
+        }
+
+        .post-photo img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+
+        .post-photo figcaption {
+            margin-top: 8px;
+            color: #555;
+            font-size: 14px;
+        }
+
         footer {
+            background: #003366;
+            color: #fff;
             padding: 24px;
             text-align: center;
             font-size: 13px;
@@ -66,9 +80,7 @@
 <body>
     <header>
         <nav class="nav" aria-label="メインナビゲーション">
-            <a href="../index.html" class="logo">
-                Takumi S. Ohbayashi
-            </a>
+            <a href="../index.html" class="logo">Takumi S. Ohbayashi</a>
 
             <button class="menu-toggle"
                     id="menu-toggle"
@@ -99,17 +111,24 @@
         <article>
             <h1>研究室でザワークラウトを作製中</h1>
 
-            <p>
-                研究室で、ザワークラウトを作っています。
-                ザワークラウトは、キャベツを塩と一緒に漬けて発酵させたものです。
-                キャベツが時間とともにどう変わっていくのか、
-                できあがるまでの様子をここに記録していきます。
-            </p>
+            <figure class="post-photo">
+                <img src="../images/IMG_8540.heic"
+                     alt="皿の左側にザワークラウト、右側にジャガイモが盛られた一皿">
+                <figcaption>2025年、ドイツ・ザクセン州への出張で食べたザワークラウト。皿の左側にあるのがそれ。</figcaption>
+            </figure>
 
-            <p>
-                まだ作製中なので、今回は仕込みを始めたところまで。
-                見た目や香りがどう変わるのか、できあがったら味も含めて追記します。
-            </p>
+            <p>この画像は私が2025年にドイツザクセン州に出張に行った際に食べたザワークラウトである。ザワークラウトとは、細く刻んだキャベツを塩で漬け、乳酸発酵させたもので、ほどよい酸味があります。</p>
+
+            <p>帰国してからも、あの味が忘れられない。そんなわけで、研究室のキッチンでザワークラウトを作ることにしました。</p>
+
+            <h2>材料</h2>
+            <p>基本の材料は、キャベツと塩の2つです。</p>
+            <ul>
+                <li>キャベツ</li>
+                <li>塩</li>
+            </ul>
+
+            <p>本場で食べたあの味に、どこまで近づけるでしょうか。できあがったら、味の感想もここに追記します。</p>
         </article>
     </main>
 
