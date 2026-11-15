@@ -151,55 +151,6 @@
            HEADER
         ========================= */
 
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-
-            background: #003366;
-            backdrop-filter: blur(10px);
-
-            z-index: 1000;
-        }
-
-        .nav {
-            max-width: 1200px;
-            margin: auto;
-
-            height: 72px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            padding: 0 30px;
-        }
-
-        .logo {
-            font-size: 18px;
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            color: #ffffff;
-
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 28px;
-
-            font-size: 14px;
-            color: #ffffff;
-        }
-
-        .nav-links a {
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            color: #ffffff;
-        }
-
 
         /* =========================
            HERO
@@ -432,15 +383,7 @@
 
         @media (max-width: 800px) {
 
-            .nav {
-                height: 64px;
-                padding: 0 20px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
+            
             .hero {
                 padding:
                     120px 20px
@@ -726,6 +669,8 @@
 
 
     </style>
+
+    <link rel="stylesheet" href="header.css">
 </head>
 
 <footer>
@@ -739,28 +684,30 @@
      HEADER
 ========================= -->
 
+
 <header>
 
     <nav class="nav">
 
-        <a href="#top" class="logo">
+        <a href="index.html" class="logo">
             Takumi S. Ohbayashi
         </a>
 
         <button class="menu-toggle"
                 id="menu-toggle"
+                type="button"
                 aria-label="メニューを開く"
                 aria-expanded="false"
                 aria-controls="nav-links">
-        
+
             <span></span>
             <span></span>
             <span></span>
-        
+
         </button>
-        
+
         <div class="nav-links" id="nav-links">
-        
+
             <a href="index.html">Home</a>
             <a href="index.html#about">About</a>
             <a href="index.html#research">Research</a>
@@ -768,12 +715,13 @@
             <a href="index.html#publications">Publications</a>
             <a href="blog.html">Blog</a>
             <a href="index.html#contact">Contact</a>
-        
+
         </div>
 
-
     </nav>
+
 </header>
+
 
 
 <main id="top">
@@ -1305,7 +1253,7 @@ Tadashi Uemura · Genes to Cells
 </script>
 
 
-
+<script src="header.js"></script>
 
     
 </body>
